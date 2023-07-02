@@ -1,0 +1,27 @@
+specVersion: 0.0.5
+schema:
+  file: schema.graphql
+dataSources:
+  - kind: ethereum
+    name: ERC6551RegistryAndReadCall
+    network: goerli
+    source:
+      address: "0x77813af45BC74aB209236b92CE2B6F2A51e58ee8"
+      abi: ERC6551RegistryAndReadCall
+      startBlock: 9248181
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AccountCreated
+        - ReceivedData
+      abis:
+        - name: ERC6551RegistryAndReadCall
+          file: ERC6551RegistryAndReadCall\abis\ERC6551RegistryAndReadCall.json
+      eventHandlers:
+        - event: AccountCreated(address,address,uint256,address,uint256,uint256)
+          handler: handleAccountCreated
+        - event: ReceivedData(address)
+          handler: handleReceivedData
+      file: ERC6551RegistryAndReadCall\ERC6551RegistryAndReadCall.wasm
