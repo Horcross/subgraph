@@ -1,0 +1,8 @@
+{
+  "goerli": {
+    "ERC6551RegistryAndReadCall": {
+      "address": "0x77813af45BC74aB209236b92CE2B6F2A51e58ee8",
+      "startBlock": 9248181
+    }
+  }
+}
